@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Settings">
+
+
+    <!-- activity_settings.xml -->
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- EditText to edit name -->
+        <EditText
+            android:id="@+id/editTextName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter your name" />
+
+        <!-- EditText to edit phone number -->
+        <EditText
+            android:id="@+id/editTextPhoneNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="phone"
+            android:hint="Enter your phone number" />
+
+        <!-- RadioGroup to select color theme -->
+        <RadioGroup
+            android:id="@+id/radioGroupColor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/radioButtonLight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Light Theme" />
+
+            <RadioButton
+                android:id="@+id/radioButtonDark"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Dark Theme" />
+        </RadioGroup>
+
+        <!-- Button to save changes -->
+        <Button
+            android:id="@+id/buttonSaveChanges"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Save Changes" />
+
+        <!-- Button to reset preferences -->
+        <Button
+            android:id="@+id/buttonResetPreferences"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Reset Preferences" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

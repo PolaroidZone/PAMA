@@ -1,0 +1,2 @@
+# PAMA
+ The Personal Assistant Management App is an Android mobile application designed to serve as a personal assistant for users. Its primary purpose is to help users manage their daily tasks and activities efficiently. The application allows users to create a profile with their preferences, such as name, phone number, and preferred background color. It also provides features like displaying missed calls, making phone calls, and playing music. The app aims to enhance productivity and organization for users, making their daily life more convenient.

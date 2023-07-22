@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <!-- item_missed_call.xml -->
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Display missed call information here, e.g., contact name, phone number, etc. -->
+        <TextView
+            android:id="@+id/textViewContactName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Contact Name"/>
+
+        <!-- Add other TextViews or UI elements to display other information -->
+        <!-- ... -->
+        <TextView
+            android:id="@+id/textViewContactNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="+267 777 818 95"/>
+
+    </LinearLayout>
+
+</androidx.appcompat.widget.LinearLayoutCompat>
