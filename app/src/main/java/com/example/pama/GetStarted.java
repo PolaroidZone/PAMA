@@ -1,6 +1,8 @@
 package com.example.pama;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
+
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -55,6 +57,9 @@ public class GetStarted extends AppCompatActivity {
         editor.putString("phoneNumber", phoneNumber);
         editor.putBoolean("isDarkTheme", isDarkTheme);
         editor.apply();
+
+        Toast.makeText(GetStarted.this, "Theme changes will take effect on the next application start", Toast.LENGTH_SHORT).show();
+
     }
 
     private void checkAndLoadPreferences() {
@@ -73,6 +78,7 @@ public class GetStarted extends AppCompatActivity {
             editTextName.setText(name);
             editTextPhoneNumber.setText(phoneNumber);
             radioGroupColor.check(isDarkTheme ? R.id.radioButtonDark : R.id.radioButtonLight);
+
         } else {
             // Preferences do not exist, prompt the user to enter the data and save preferences
             savePreferences();

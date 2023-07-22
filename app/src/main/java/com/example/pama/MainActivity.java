@@ -17,6 +17,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.example.pama.adapters.MissedCallAdapter;
 import com.example.pama.objects.MissedCallItem;
@@ -54,12 +55,8 @@ public class MainActivity extends AppCompatActivity {
         recyclerViewMissedCalls.setAdapter(missedCallAdapter);
 
         // Check and request READ_CALL_LOG permission if necessary
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_CALL_LOG) != PackageManager.PERMISSION_GRANTED) {
-                ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_CALL_LOG}, REQUEST_READ_CALL_LOG);
-            } else {
-                fetchMissedCalls();
-            }
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_CALL_LOG) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_CALL_LOG}, REQUEST_READ_CALL_LOG);
         } else {
             fetchMissedCalls();
         }
@@ -168,6 +165,10 @@ public class MainActivity extends AppCompatActivity {
                 cursor.close();
                 missedCallAdapter.notifyDataSetChanged();
             }
+
+            Toast.makeText(MainActivity.this, "No missed calls to display yet!", Toast.LENGTH_SHORT).show();
+            missedCallAdapter.notifyDataSetChanged();
+
         }
     }
 

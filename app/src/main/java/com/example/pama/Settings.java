@@ -1,12 +1,15 @@
 package com.example.pama;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
+
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Toast;
 
 import java.util.Objects;
 
@@ -49,6 +52,8 @@ public class Settings extends AppCompatActivity {
         editor.putString("phoneNumber", phoneNumber);
         editor.putBoolean("isDarkTheme", isDarkTheme);
         editor.apply();
+        Toast.makeText(Settings.this, "Changes will take effect on the next application start", Toast.LENGTH_SHORT).show();
+
     }
 
     private void resetPreferences() {
@@ -62,6 +67,7 @@ public class Settings extends AppCompatActivity {
         editTextName.setText("");
         editTextPhoneNumber.setText("");
         radioGroupColor.clearCheck();
+        Toast.makeText(Settings.this, "Changes will take effect on the next application start", Toast.LENGTH_SHORT).show();
     }
 
     private void loadPreferences() {
@@ -75,5 +81,14 @@ public class Settings extends AppCompatActivity {
         editTextName.setText(name);
         editTextPhoneNumber.setText(phoneNumber);
         radioGroupColor.check(isDarkTheme ? R.id.radioButtonDark : R.id.radioButtonLight);
+        // Set the app theme based on the saved preference
+        if (isDarkTheme) {
+            // Set dark theme
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+
+        } else {
+            // Set light theme
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+        }
     }
 }

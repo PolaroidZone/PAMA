@@ -77,6 +77,7 @@ public class PlayMusic extends AppCompatActivity {
             }
             cursor.close();
         }
+        Toast.makeText(PlayMusic.this, "No music to display yet!", Toast.LENGTH_SHORT).show();
     }
 
     private void setupListView() {
